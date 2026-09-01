@@ -23,22 +23,22 @@ export default function DifferentialsGrid({ eyebrow, title, items, bg = 'bg-ink-
               transition={{ duration: 0.7, delay: i * 0.12, ease: [0.25, 0.46, 0.45, 0.94] }}
               className="pt-6 relative"
             >
-              <div className="absolute top-0 left-0 w-full border-t border-white/10"></div>
+              <div className="absolute top-0 left-0 w-full border-t border-cream/10"></div>
               <motion.div
-                className="h-[2px] w-full bg-signal absolute top-0 left-0 origin-left"
+                className="h-[2px] w-full bg-gradient-to-r from-signal to-ember absolute top-0 left-0 origin-left"
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.9, delay: i * 0.12 + 0.2, ease: 'easeOut' }}
               />
               <motion.span
-                className="block font-display text-4xl font-bold text-signal/30 mb-4"
+                className="block font-display text-4xl font-bold text-signal/50 drop-shadow-[0_0_14px_rgba(247,81,31,0.65)] mb-4"
                 animate={{ y: [0, -6, 0] }}
                 transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut', delay: i * 0.25 }}
               >
                 {item.num}
               </motion.span>
-              <h3 className="font-display text-xl font-semibold mb-3 text-white">{item.title}</h3>
+              <h3 className="font-display text-xl font-semibold mb-3 text-cream">{item.title}</h3>
               <p className="text-mist-900 text-sm leading-relaxed">{item.desc}</p>
             </motion.div>
           ))}

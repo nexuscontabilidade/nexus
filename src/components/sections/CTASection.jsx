@@ -14,7 +14,7 @@ export default function CTASection({ variant = 'home' }) {
     <section className="relative min-h-[80vh] bg-ink-950 flex flex-col justify-center items-center overflow-hidden py-32">
       <div className="absolute inset-0 bg-gradient-to-br from-ink-700 via-ink-900 to-ink-950 opacity-50 z-0"></div>
       <div className="grain absolute inset-0 z-0 mix-blend-overlay opacity-30"></div>
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] max-w-[800px] max-h-[800px] bg-[radial-gradient(ellipse_80%_50%_at_50%_50%,rgba(255,165,0,0.08),transparent)] z-0 rounded-full blur-[50px] pointer-events-none"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] max-w-[800px] max-h-[800px] bg-[radial-gradient(ellipse_80%_50%_at_50%_50%,rgba(247,81,31,0.08),transparent)] z-0 rounded-full blur-[50px] pointer-events-none"></div>
 
       <motion.div
         animate={{ y: [0, -60, 0], x: [0, 30, 0] }}
@@ -48,12 +48,12 @@ export default function CTASection({ variant = 'home' }) {
         >
           {isHome ? (
             <>
-              <span className="text-white">Pronto para</span>
+              <span className="text-cream">Pronto para</span>
               <span className="text-stroke">crescer?</span>
             </>
           ) : (
             <>
-              <span className="text-white">Pronto para</span>
+              <span className="text-cream">Pronto para</span>
               <span className="text-stroke">transformar seu negócio?</span>
             </>
           )}
@@ -96,16 +96,16 @@ export default function CTASection({ variant = 'home' }) {
         >
           {isHome ? (
             <div className="flex flex-wrap justify-center gap-4">
-              <MagneticButton to="/contato" className="inline-flex items-center gap-3 px-10 py-5 text-lg font-display font-medium bg-signal text-ink-950 rounded-full hover:shadow-[0_0_40px_rgba(255,165,0,0.35)] transition-all">
+              <MagneticButton to="/contato" className="inline-flex items-center gap-3 px-10 py-5 text-lg font-display font-medium bg-gradient-to-br from-signal to-ember text-ink-950 rounded-full shadow-[0_0_24px_rgba(247,81,31,0.35)] hover:shadow-[0_0_40px_rgba(247,81,31,0.55)] transition-all">
                 Começar Agora
                 <motion.span animate={{ x: [0, 5, 0] }} transition={{ duration: 1.5, repeat: Infinity }}>&rarr;</motion.span>
               </MagneticButton>
-              <MagneticButton href={whatsappGeneric} target="_blank" rel="noreferrer" className="inline-flex items-center gap-3 px-10 py-5 text-lg font-display font-medium border border-white/20 text-white rounded-full hover:border-white/40 hover:bg-white/5 transition-all">
+              <MagneticButton href={whatsappGeneric} target="_blank" rel="noreferrer" className="inline-flex items-center gap-3 px-10 py-5 text-lg font-display font-medium border border-cream/20 text-cream rounded-full hover:border-cream/40 hover:bg-cream/5 transition-all">
                 WhatsApp
               </MagneticButton>
             </div>
           ) : (
-            <MagneticButton href={whatsappSpecialist} target="_blank" rel="noreferrer" className="inline-flex items-center gap-3 px-10 py-5 text-lg font-display font-medium bg-signal text-ink-950 rounded-full hover:shadow-[0_0_40px_rgba(255,165,0,0.35)] transition-all">
+            <MagneticButton href={whatsappSpecialist} target="_blank" rel="noreferrer" className="inline-flex items-center gap-3 px-10 py-5 text-lg font-display font-medium bg-gradient-to-br from-signal to-ember text-ink-950 rounded-full shadow-[0_0_24px_rgba(247,81,31,0.35)] hover:shadow-[0_0_40px_rgba(247,81,31,0.55)] transition-all">
               Falar com Especialista
               <motion.span animate={{ x: [0, 5, 0] }} transition={{ duration: 1.5, repeat: Infinity }}>&rarr;</motion.span>
             </MagneticButton>

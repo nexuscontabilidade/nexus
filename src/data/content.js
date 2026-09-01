@@ -5,7 +5,7 @@
 export const contactInfo = {
   whatsappNumber: '5585994378137',
   whatsappDisplay: '(85) 99437-8137',
-  email: 'nexus.assessoriafinanceira@gmail.com',
+  email: 'nexuscontabilidadedigital001@gmail.com',
   address: 'Rua Padre Antonio Pinto, 1771',
   city: 'Baturité - CE',
   instagram: 'https://www.instagram.com/nexus.consultoriadigital/',
@@ -83,17 +83,22 @@ export const values = [
   {
     icon: 'Target',
     title: 'Missão',
-    desc: 'Aplicar a Fórmula Nexus para simplificar a gestão dos negócios e otimizar tributos por meio de estratégias inteligentes - sempre com um atendimento próximo e humano.',
+    desc: 'Ser o **braço direito do empreendedor**, entregando **soluções contábeis de forma rápida e humanizada**. Nosso compromisso é responder suas dúvidas em tempo recorde e **garantir a segurança fiscal** que você precisa para evoluir sem medo.',
   },
   {
     icon: 'Eye',
     title: 'Visão',
-    desc: 'Ser referência em contabilidade estratégica, entregando resultados reais com redução de impostos e crescimento sustentável.',
+    desc: 'Ser reconhecido como o **escritório de contabilidade mais ágil e focado na experiência do cliente do mercado**, transformando a relação entre contadores e empreendedores através da inovação e da eficiência.',
   },
   {
     icon: 'Heart',
     title: 'Valores',
-    desc: 'Excelência no atendimento, ética e transparência, inovação e estratégia, foco em resultados e compromisso absoluto com o crescimento dos nossos clientes.',
+    list: [
+      'Excelência no atendimento',
+      'Ética e transparência',
+      'Inovação e estratégia',
+      'Foco em resultado',
+    ],
   },
 ]
 

@@ -13,8 +13,8 @@ function StepItem({ step, index }) {
         <motion.div
           className="w-4 h-4 rounded-full border-2 transition-colors duration-500"
           animate={{
-            borderColor: inView ? '#FFA500' : 'rgba(255,255,255,0.2)',
-            backgroundColor: inView ? '#FFA500' : '#0a0a0a',
+            borderColor: inView ? '#f7511f' : 'rgba(250,237,229,0.2)',
+            backgroundColor: inView ? '#f7511f' : '#242424',
           }}
         />
       </div>
@@ -26,15 +26,15 @@ function StepItem({ step, index }) {
         transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
         className="pl-16 md:pl-24 relative w-full max-w-2xl"
       >
-        <div className="absolute -top-10 md:-top-16 left-12 md:left-16 font-display text-[6rem] md:text-[9rem] text-white/5 font-bold leading-none select-none pointer-events-none">
+        <div className="absolute -top-10 md:-top-16 left-12 md:left-16 font-display text-[6rem] md:text-[9rem] text-cream/5 font-bold leading-none select-none pointer-events-none">
           0{index + 1}
         </div>
 
         <div className="relative z-10">
-          <span className="inline-block border border-white/10 text-mist-900 bg-ink-950 font-mono text-xs px-3 py-1 rounded-full mb-6">
+          <span className="inline-block border border-cream/10 text-mist-900 bg-ink-950 font-mono text-xs px-3 py-1 rounded-full mb-6">
             {step.duration}
           </span>
-          <h3 className={`font-display text-3xl md:text-4xl lg:text-5xl font-semibold mb-4 tracking-tight transition-colors duration-500 ${inView ? 'text-white' : 'text-mist-500'}`}>
+          <h3 className={`font-display text-3xl md:text-4xl lg:text-5xl font-semibold mb-4 tracking-tight transition-colors duration-500 ${inView ? 'text-cream' : 'text-mist-500'}`}>
             {step.title}
           </h3>
           <p className={`font-body text-lg md:text-xl mb-6 transition-colors duration-500 ${inView ? 'text-signal' : 'text-mist-700'}`}>
@@ -67,10 +67,10 @@ export default function ProcessTimeline() {
       </div>
 
       <div className="max-w-4xl mx-auto px-6 md:px-12 relative w-full">
-        <div className="w-px bg-white/5 absolute top-0 bottom-0 left-6 md:left-12 opacity-50"></div>
+        <div className="w-px bg-cream/5 absolute top-0 bottom-0 left-6 md:left-12 opacity-50"></div>
 
         <motion.div
-          className="w-[3px] -ml-[1px] absolute top-0 bottom-0 left-6 md:left-12 bg-gradient-to-b from-signal/10 via-signal to-signal/10 origin-top shadow-[0_0_15px_rgba(255,165,0,0.5)] z-0"
+          className="w-[3px] -ml-[1px] absolute top-0 bottom-0 left-6 md:left-12 bg-gradient-to-b from-signal/10 via-signal to-signal/10 origin-top shadow-[0_0_15px_rgba(247,81,31,0.5)] z-0"
           style={{ scaleY }}
         />
 

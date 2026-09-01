@@ -10,14 +10,14 @@ export default function FAQSection() {
   const [value, setValue] = useState('')
 
   return (
-    <section className="relative bg-ink-950 py-32 border-b border-white/5 overflow-hidden">
+    <section className="relative bg-ink-950 py-32 border-b border-cream/5 overflow-hidden">
       <AmbientBackground />
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
 
           <ScrollReveal>
             <div className="lg:sticky lg:top-32">
-              <h2 className="font-display text-[6rem] md:text-[8rem] text-white/5 leading-none font-bold select-none pointer-events-none mb-4 -ml-4 tracking-tighter">
+              <h2 className="font-display text-[6rem] md:text-[8rem] text-cream/5 leading-none font-bold select-none pointer-events-none mb-4 -ml-4 tracking-tighter">
                 FAQ
               </h2>
               <div className="relative -mt-12 md:-mt-16 ml-2">
@@ -42,17 +42,17 @@ export default function FAQSection() {
                 <Accordion.Item
                   key={index}
                   value={`item-${index}`}
-                  className="border-b border-white/5 overflow-hidden"
+                  className="border-b border-cream/5 overflow-hidden"
                 >
                   <Accordion.Header className="flex">
                     <Accordion.Trigger
                       className="group font-body text-lg md:text-xl py-6 md:py-8 flex justify-between items-center w-full text-left focus:outline-none transition-colors"
                       data-cursor="hover"
                     >
-                      <span className={`tracking-tight pr-8 transition-colors duration-300 ${value === `item-${index}` ? 'text-signal' : 'text-mist-100 group-hover:text-white'}`}>
+                      <span className={`tracking-tight pr-8 transition-colors duration-300 ${value === `item-${index}` ? 'text-signal' : 'text-mist-100 group-hover:text-cream'}`}>
                         {faq.q}
                       </span>
-                      <div className="shrink-0 text-mist-700 transition-transform duration-300 group-hover:text-white">
+                      <div className="shrink-0 text-mist-700 transition-transform duration-300 group-hover:text-cream">
                         {value === `item-${index}` ? <Minus size={20} className="text-signal" /> : <Plus size={20} />}
                       </div>
                     </Accordion.Trigger>

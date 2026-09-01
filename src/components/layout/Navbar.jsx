@@ -25,7 +25,7 @@ export default function Navbar() {
     <>
       <header
         className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
-          scrolled ? 'backdrop-blur-xl bg-ink-950/80 border-b border-white/5 py-4' : 'bg-transparent py-6'
+          scrolled ? 'backdrop-blur-xl bg-ink-950/80 border-b border-cream/5 py-4' : 'bg-transparent py-6'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
@@ -39,7 +39,7 @@ export default function Navbar() {
                 key={link.to}
                 to={link.to}
                 className={`font-body text-sm transition-colors relative group ${
-                  location.pathname === link.to ? 'text-white' : 'text-mist-900 hover:text-white'
+                  location.pathname === link.to ? 'text-cream' : 'text-mist-900 hover:text-cream'
                 }`}
                 data-cursor="hover"
               >
@@ -54,7 +54,7 @@ export default function Navbar() {
           <div className="hidden md:block">
             <MagneticButton
               to="/contato"
-              className="inline-block px-6 py-2.5 rounded-full border border-ember text-ember text-sm hover:bg-ember hover:text-white transition-colors"
+              className="inline-block px-6 py-2.5 rounded-full border border-ember text-ember text-sm shadow-[0_0_14px_rgba(255,114,40,0.25)] hover:bg-ember hover:text-cream hover:shadow-[0_0_22px_rgba(255,114,40,0.45)] transition-colors"
               data-cursor="hover"
             >
               Fale Conosco
@@ -62,7 +62,7 @@ export default function Navbar() {
           </div>
 
           <button
-            className="md:hidden z-50 text-white p-2"
+            className="md:hidden z-50 text-cream p-2"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Menu"
           >
@@ -89,7 +89,7 @@ export default function Navbar() {
                 >
                   <Link
                     to={link.to}
-                    className="font-display text-6xl text-white hover:text-signal transition-colors"
+                    className="font-display text-6xl text-cream hover:text-signal transition-colors"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {link.label}

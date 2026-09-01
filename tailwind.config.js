@@ -5,33 +5,37 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Paleta da Nexus (preto + laranja) nos mesmos tokens do template original
+        // Paleta da Nexus — #242424 / #f7511f / #ff7228 / #faede5
         ink: {
-          950: '#0a0a0a',
-          900: '#111111',
-          800: '#1a1a1a',
-          700: '#222222',
-          600: '#2e2e2e',
+          950: '#000000', // preto puro — base das páginas
+          900: '#242424', // grafite da marca — cards e superfícies elevadas
+          800: '#313030',
+          700: '#403e3d',
+          600: '#514e4d',
         },
         signal: {
-          DEFAULT: '#FFA500', // laranja Nexus — acento primário
-          dim: '#cc8400',
+          DEFAULT: '#f7511f', // acento primário
+          dim: '#c13f18',
         },
         ember: {
-          DEFAULT: '#FF8C00', // laranja escuro Nexus — acento secundário
-          dim: '#cc7000',
+          DEFAULT: '#ff7228', // acento secundário
+          dim: '#c7591f',
         },
+        cream: '#faede5', // cor de texto/foreground clara (substitui o branco puro)
         mist: {
-          900: '#B0B0B0',
-          700: '#c4c4c4',
-          500: '#d8d8d8',
-          100: '#f0f0f0',
+          900: '#9a938e',
+          700: '#b6ada7',
+          500: '#cfc5be',
+          100: '#e9ddd6',
         },
       },
       fontFamily: {
-        display: ['"Clash Display"', 'sans-serif'],
-        body: ['"Cabinet Grotesk"', 'sans-serif'],
-        mono: ['"JetBrains Mono"', 'monospace'],
+        // Fonte única do site (mesma do site original) — display/body/mono
+        // apontam todos para a mesma família para manter as classes já
+        // usadas nos componentes sem precisar reescrevê-las.
+        display: ['"Loos Normal"', 'sans-serif'],
+        body: ['"Loos Normal"', 'sans-serif'],
+        mono: ['"Loos Normal"', 'sans-serif'],
       },
       fontSize: {
         '10xl': ['10rem', { lineHeight: '0.9', letterSpacing: '-0.04em' }],

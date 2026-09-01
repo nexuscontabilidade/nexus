@@ -4,7 +4,7 @@ import { stats } from '../../data/content'
 
 export default function StatsSection() {
   return (
-    <section className="bg-signal py-24 md:py-32 w-full text-ink-950 relative z-10">
+    <section className="bg-gradient-to-r from-signal to-ember py-24 md:py-32 w-full text-ink-950 relative z-10">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Números de exemplo — substitua pelos números reais da Nexus */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-y-20">

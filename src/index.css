@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Loos Normal';
+  font-weight: normal;
+  font-style: normal;
+  src: url('/fonts/loos-normal-regular.otf') format('opentype');
+  font-display: swap;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -50,5 +58,13 @@
        desapareceria por completo. */
     -webkit-text-stroke: 1px currentColor;
     -webkit-text-fill-color: transparent;
+  }
+
+  /* Brilho automático em qualquer texto laranja do site — via seletor
+     direto nas classes geradas pelo Tailwind, sem precisar editar
+     cada componente individualmente. */
+  .text-signal,
+  .text-ember {
+    filter: drop-shadow(0 0 8px rgba(247, 81, 31, 0.55));
   }
 }

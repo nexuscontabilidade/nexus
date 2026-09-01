@@ -20,7 +20,7 @@ export default function AmbientBackground({ className = '' }) {
         animate={{ x: [0, -40, 0], y: [0, -30, 0] }}
         transition={{ duration: 26, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
       />
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:60px_60px]" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(250,237,229,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(250,237,229,0.025)_1px,transparent_1px)] bg-[size:60px_60px]" />
     </div>
   )
 }
