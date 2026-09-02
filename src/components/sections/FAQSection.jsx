@@ -4,29 +4,19 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
 import { faqs } from '../../data/content'
 import ScrollReveal from '../ui/ScrollReveal'
-import AmbientBackground from '../ui/AmbientBackground'
 
 export default function FAQSection() {
   const [value, setValue] = useState('')
 
   return (
-    <section className="relative bg-ink-950 py-32 border-b border-cream/5 overflow-hidden">
-      <AmbientBackground />
+    <section className="relative pb-32 overflow-hidden">
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
 
           <ScrollReveal>
             <div className="lg:sticky lg:top-32">
-              <h2 className="font-display text-[6rem] md:text-[8rem] text-cream/5 leading-none font-bold select-none pointer-events-none mb-4 -ml-4 tracking-tighter">
-                FAQ
-              </h2>
-              <div className="relative -mt-12 md:-mt-16 ml-2">
-                <p className="font-mono text-xs text-signal uppercase tracking-widest mb-4">Dúvidas Comuns</p>
-                <h3 className="font-display text-3xl md:text-4xl font-bold mb-6">Respostas para suas perguntas.</h3>
-                <p className="text-mist-900 font-body text-lg leading-relaxed max-w-sm">
-                  Tudo o que você precisa saber sobre como trabalhamos e o que acontece a cada etapa.
-                </p>
-              </div>
+              <p className="font-mono text-xs text-signal uppercase tracking-widest mb-4">Tire suas dúvidas</p>
+              <h2 className="font-display text-3xl md:text-4xl font-bold">Perguntas <span className="text-signal">Frequentes</span></h2>
             </div>
           </ScrollReveal>
 
@@ -34,7 +24,7 @@ export default function FAQSection() {
             <Accordion.Root
               type="single"
               collapsible
-              className="w-full flex flex-col"
+              className="w-full flex flex-col gap-3"
               value={value}
               onValueChange={setValue}
             >
@@ -42,11 +32,11 @@ export default function FAQSection() {
                 <Accordion.Item
                   key={index}
                   value={`item-${index}`}
-                  className="border-b border-cream/5 overflow-hidden"
+                  className={`bg-ink-800 border rounded-[14px] px-6 overflow-hidden transition-colors duration-300 ${value === `item-${index}` ? 'border-signal/40' : 'border-cream/10'}`}
                 >
                   <Accordion.Header className="flex">
                     <Accordion.Trigger
-                      className="group font-body text-lg md:text-xl py-6 md:py-8 flex justify-between items-center w-full text-left focus:outline-none transition-colors"
+                      className="group font-display font-semibold text-base md:text-lg py-5 flex justify-between items-center w-full text-left focus:outline-none transition-colors"
                       data-cursor="hover"
                     >
                       <span className={`tracking-tight pr-8 transition-colors duration-300 ${value === `item-${index}` ? 'text-signal' : 'text-mist-100 group-hover:text-cream'}`}>

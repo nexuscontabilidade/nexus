@@ -1,58 +1,42 @@
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
-import { services, contactInfo } from '../../data/content'
+import { Check } from 'lucide-react'
+import { services, moreServices } from '../../data/content'
 import { iconMap, FallbackIcon } from '../../data/icons'
 import ScrollReveal from '../ui/ScrollReveal'
-import AmbientBackground from '../ui/AmbientBackground'
 
-export default function ServicesGrid({ variant = 'full' }) {
-  const isPreview = variant === 'preview'
-
+export default function ServicesGrid() {
   return (
-    <section className="bg-ink-900 py-32 relative overflow-hidden" id="services">
-      <AmbientBackground />
+    <section className="py-32 relative overflow-hidden" id="servicos">
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
 
         <ScrollReveal delay={0.1}>
-          <p className="font-mono text-xs text-signal uppercase tracking-widest mb-4">Nossas Soluções</p>
-          <h2 className="font-display text-4xl md:text-6xl font-bold mb-16 tracking-tight">
-            Contabilidade pensada<br />para o crescimento.
+          <p className="font-mono text-xs text-signal uppercase tracking-widest mb-4">O que fazemos</p>
+          <h2 className="font-display text-4xl md:text-6xl font-bold mb-6 tracking-tight max-w-3xl">
+            Tudo o que a sua empresa precisa entregar <span className="text-signal">sob um mesmo teto</span>.
           </h2>
+          <p className="text-mist-900 text-lg max-w-2xl mb-16">
+            Da apuração de impostos à folha de pagamento, do balanço ao certificado digital.
+            Uma equipe multidisciplinar cuidando de cada obrigação e de cada prazo.
+          </p>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-16">
           {services.map((service, i) => {
             const IconComponent = iconMap[service.icon] || FallbackIcon
-            const whatsappHref = `https://wa.me/${contactInfo.whatsappNumber}?text=${encodeURIComponent(
-              `Olá! Tenho interesse em contratar o serviço de ${service.title}. Podem entrar em contato comigo?`
-            )}`
 
             return (
               <motion.div
-                key={service.id}
+                key={service.anchor}
                 id={service.anchor}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-50px' }}
                 transition={{ duration: 0.6, delay: i * 0.05 }}
-                className="bg-ink-800 border border-cream/5 p-8 relative overflow-hidden group hover:border-signal/40 hover:scale-[1.01] transition-all duration-500 hover:bg-ink-800/80 flex flex-col justify-between scroll-mt-32"
-                data-cursor="hover"
+                className="bg-ink-800 border border-cream/10 rounded-[18px] p-8 relative overflow-hidden group hover:-translate-y-1.5 hover:border-signal/50 hover:shadow-[0_0_46px_rgba(247,81,31,0.35)] transition-all duration-300 flex flex-col scroll-mt-32"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-cream/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                <div className="relative z-10 mb-8">
-                  <div className="flex justify-between items-start w-full mb-8">
-                    <span className="font-mono text-xs text-mist-900">{service.number}</span>
-                    <div className="flex items-center gap-3">
-                      {service.badge && (
-                        <span className="font-mono text-[10px] uppercase tracking-widest bg-gradient-to-r from-signal to-ember text-ink-950 px-3 py-1 rounded-full font-bold shadow-[0_0_14px_rgba(247,81,31,0.5)]">
-                          {service.badge}
-                        </span>
-                      )}
-                      <div className="text-cream/60 group-hover:text-cream group-hover:scale-110 transition-all duration-300">
-                        <IconComponent size={28} strokeWidth={1.5} />
-                      </div>
-                    </div>
+                <div className="relative z-10 mb-6">
+                  <div className="w-12 h-12 rounded-[13px] bg-signal/10 border border-signal/30 flex items-center justify-center mb-5">
+                    <IconComponent size={24} strokeWidth={1.6} className="text-ember" />
                   </div>
 
                   <h3 className="font-display font-medium text-2xl md:text-3xl mb-3">
@@ -63,41 +47,32 @@ export default function ServicesGrid({ variant = 'full' }) {
                   </p>
                 </div>
 
-                {!isPreview && (
-                  <div className="relative z-10 flex flex-wrap gap-2 mt-auto mb-6">
-                    {service.tags.map((tag) => (
-                      <span key={tag} className="font-mono text-[10px] md:text-xs text-mist-700 bg-ink-900 border border-cream/10 px-3 py-1.5 rounded-full">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                )}
-
-                <div className="relative z-10">
-                  {isPreview ? (
-                    <Link
-                      to={`/servicos#${service.anchor}`}
-                      className="inline-flex items-center gap-2 text-signal font-mono text-sm hover:gap-3 transition-all"
-                      data-cursor="hover"
-                    >
-                      Saiba mais &rarr;
-                    </Link>
-                  ) : (
-                    <a
-                      href={whatsappHref}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-2 bg-gradient-to-br from-signal to-ember text-ink-950 font-display font-medium px-6 py-2.5 rounded-full text-sm shadow-[0_0_16px_rgba(247,81,31,0.3)] hover:shadow-[0_0_26px_rgba(247,81,31,0.5)] transition-all"
-                      data-cursor="hover"
-                    >
-                      Contratar
-                    </a>
-                  )}
-                </div>
+                <ul className="relative z-10 flex flex-col gap-2 mt-auto">
+                  {service.items.map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-mist-700 text-sm">
+                      <Check size={16} className="text-signal shrink-0 mt-0.5" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </motion.div>
             )
           })}
         </div>
+
+        <ScrollReveal delay={0.15}>
+          <div className="bg-ink-800/60 border border-cream/10 rounded-[18px] p-8 md:p-10 transition-all duration-300 hover:-translate-y-1 hover:border-signal/50 hover:shadow-[0_0_46px_rgba(247,81,31,0.35)]">
+            <h3 className="font-display text-xl font-semibold mb-6">Também cuidamos de</h3>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
+              {moreServices.map((item) => (
+                <li key={item} className="flex items-start gap-3 text-mist-500 text-sm">
+                  <Check size={16} className="text-signal shrink-0 mt-0.5" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   )
